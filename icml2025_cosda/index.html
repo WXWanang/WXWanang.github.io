@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.147.9">
+  
+  <meta name="description" content="Abstract Open-Set Domain Adaptation (OSDA) aims to transfer knowledge from the labeled source domain to the unlabeled target domain that contains unknown categories, thus facing the challenges of domain shift and unknown category recognition. While recent works have demonstrated the potential of causality for domain alignment, little exploration has been conducted on causal-inspired theoretical frameworks for OSDA. To fill this gap, we introduce the concept of Susceptibility and propose a novel Counterfactual-based susceptibility risk framework for OSDA, termed COSDA. Specifically, COSDA consists of three novel components: (i) a Susceptibility Risk Estimator (SRE) for capturing causal information, along with comprehensive derivations of the computable theoretical upper bound, forming a risk minimization framework under the OSDA paradigm; (ii) a Contrastive Feature Alignment (CFA) module, which is theoretically proven based on mutual information to satisfy the Exogeneity assumption and facilitate cross-domain feature alignment; (iii) a Virtual Multi-unknown-categories Prototype (VMP) pseudo-labeling strategy, providing label information by measuring how similar samples are to known and multiple virtual unknown category prototypes, thereby assisting in open-set recognition and intra-class discriminative feature learning. Extensive experiments demonstrate that our approach achieves state-of-the-art performance.">
+  <link rel="stylesheet" href="http://localhost:1313/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+  <title>COSDA</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    COSDA: Counterfactual-based Susceptibility Risk Framework for Open-Set Domain Adaptation
+  </h1>
+  <h2 class="project-tagline">
+    Wenxu Wang<sup>1</sup>, Rui Zhou<sup>2</sup>, Jing Wang<sup>3</sup>, Yun Zhou<sup>2</sup>, Cheng Zhu<sup>2</sup>, Ruichun Tang<sup>1</sup>, Bo Han<sup>4</sup>, Nevin L. Zhang<sup>5</sup><br><sup>1</sup>Ocean University of China, China <sup>2</sup>National University of Defense Technology, China <sup>3</sup>University of British Columbia, Canada <sup>4</sup>Hong Kong Baptist University, Hong Kong, China <sup>5</sup>The Hong Kong University of Science and Technology, Hong Kong, China
+  </h2>
+  <nav>
+    
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+<main class="homepage-content">
+  <h2 id="abstract"><strong>Abstract</strong></h2>
+<p>Open-Set Domain Adaptation (OSDA) aims to transfer knowledge from the labeled source domain to the unlabeled target domain that contains unknown categories, thus facing the challenges of domain shift and unknown category recognition. While recent works have demonstrated the potential of causality for domain alignment, little exploration has been conducted on causal-inspired theoretical frameworks for OSDA. To fill this gap, we introduce the concept of <em>Susceptibility</em> and propose a novel <strong>C</strong>ounterfactual-based susceptibility risk framework for <strong>OSDA</strong>, termed <strong>COSDA</strong>. Specifically, COSDA consists of three novel components: (i) a <em>Susceptibility Risk Estimator (SRE)</em> for capturing causal information, along with comprehensive derivations of the computable theoretical upper bound, forming a risk minimization framework under the OSDA paradigm; (ii) a <em>Contrastive Feature Alignment (CFA)</em> module, which is theoretically proven based on mutual information to satisfy the <em>Exogeneity</em> assumption and facilitate cross-domain feature alignment; (iii) a <em>Virtual Multi-unknown-categories Prototype (VMP)</em> pseudo-labeling strategy, providing label information by measuring how similar samples are to known and multiple virtual unknown category prototypes, thereby assisting in open-set recognition and intra-class discriminative feature learning. Extensive experiments demonstrate that our approach achieves state-of-the-art performance.</p>
+<h2 id="contributions"><strong>Contributions</strong></h2>
+<p><strong>Promising Way:</strong> We propose a structural causal model within the OSDA paradigm and perform theoretical derivations and algorithm design centered on the counterfactual probability of susceptibility. This addresses its optimizability, evaluability, and identifiability, thus presenting a principled causal framework for OSDA tasks.
+<strong>Systematic Theoretical Framework:</strong> We introduce a novel counterfactual-based risk—Susceptibility risk—along with its evaluator. A theoretically computable upper bound for the target domain’s susceptibility risk is derived within the OSDA paradigm.
+<strong>Innovative Techniques:</strong> We identify an optimization objective that satisfies the Exogeneity causal assumption, which is recognized as maximizing the mutual information between the target sample and the source domain prototype. Based on this, we propose a Virtual Multi-unknown-categories Prototype (VMP) pseudo-labeling strategy and a Contrastiveinspired Feature Alignment (CFA) module.
+<strong>Comprehensive Experiments:</strong> We validate the effectiveness of the model on three benchmark datasets, achieving improvements of 2.9%, 2.2%, and 1.0% respectively, compared to state-of-the-art (SOTA) algorithms. Ablation studies and experiments on synthetic datasets confirm the effectiveness of each proposed module</p>
+<h2 id="pipeline"><strong>Pipeline</strong></h2>
+<p><img src="images/pic.png" alt="COSDA Pipeline">
+Figure. An overview of our proposed COSDA. (a) describes the deployment of feature interventions. We add an intervention module utilizing Multi-Layer Perception (MLP) following feature C, executing an intervention via a nonlinear transformation of feature C. The feature distribution is a Gaussian distribution with parameterized mean and variance, as popularized by VIB (Kingma et al, 2015). (b) The VMP and CFA are proposed to address Exogeneity. The central idea of VMP (1.-4.) is to build the centroids of all known and unknown classes, and then generate the pseudo label for samples by comparing the distance between samples and the centroids. CFA (5.) introduces the concept of feature alignment, which reduces the distance to the appropriate class centroid while maximizing the distance to the centroids of other classes, establishing class-level cross-domain feature alignment. Through adaptation, we align the features of known classes while also learning the decision boundary for unknown classes.</p>
+<h2 id="code"><strong>Code</strong></h2>
+<p><a href="https://github.com/ZHOURui6025/COSDA-master">github</a></p>
+<h2 id="contact"><strong>Contact</strong></h2>
+<p>You can reach us at the following email addresses:
+<a href="mailto:wangwenxu@ouc.edu.cn">wangwenxu@ouc.edu.cn</a>
+<a href="mailto:zhourui6025@nudt.edu.cn">zhourui6025@nudt.edu.cn</a></p>
+
+</main>
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+  </span>
+</footer>
+
+  </section>
+  
+</body>
+</html>
