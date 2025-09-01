@@ -16,22 +16,23 @@
 <div id="app" class="text-sm" style="line-height:normal;">
     <div class="min-h-screen">
         <div id="banner" class="px-4 h-12 w-full bg-blue-700 text-lg fixed top-0">
-            <div class="md:max-w-5xl flex justify-between mx-auto items-center h-full">
+            <div class="banner-content md:max-w-5xl flex justify-between mx-auto items-center h-full">
                 <div class="text-white font-bold">Wenxu Wang</div>
                 <div class="flex text-white gap-2 md:gap-12">
                     <a href="#info" class="text-white text-base cursor-pointer">Home</a>
                     <a href="#group" class="text-white text-base cursor-pointer">Group</a>
                     <a href="#publications" class="text-white text-base cursor-pointer">Publications</a>
                     <a href="#projects" class="text-white text-base cursor-pointer">Projects</a>
+                    <a href="#Awards" class="text-white text-base cursor-pointer">Awards</a>
                 </div>
             </div>
         </div>
-        <div id="info" class="max-w-5xl mx-auto text-base mt-16 pt-4 px-4 flex flex-wrap gap-4 md:gap-16 h-full">
+        <div id="info" class="main-content max-w-5xl mx-auto text-base mt-16 pt-4 px-4 flex flex-wrap gap-4 md:gap-16 h-full">
             <div>
 <!--                头像-->
                 <img src="assets/avatar.jpg" class="w-48 custom-avatar" alt="">
             </div>
-            <div class="flex flex-col leading-6 mt-4">
+            <div class="self-intro flex flex-col leading-6 mt-4">
                 <div class="text-3xl font-bold mb-4">
                     <span>Wenxu Wang</span>
                     <span>「王文旭」</span>
@@ -51,39 +52,23 @@
                 <div>
                     Email: wangwenxu [at] ouc [dot] edu [dot] cn
                 </div>
-                <!-- 可替换链接 -->
-<!--                 <div class="mt-4 flex">
-                    <div class="flex">
-                        <div class="text-blue-700">
-                            <a href="https://atomlab.yanyanlan.com/" target="_blank">ATOM Lab</a>
-                        </div>
-                        <div class="mx-1">/</div>
-                    </div>
-                    <div class="flex">
-                        <div class="text-blue-700">
-                            <a href="https://scholar.google.com/citations?user=mNfCP3gAAAAJ&amp;hl=en" target="_blank">
-                                Google Scholar
-                            </a>
-                        </div>
-                        <div class="mx-1">/</div>
-                    </div>
-                    <div class="flex">
-                        <div class="text-blue-700">
-                            <a href="https://dblp.org/pid/00/6040.html" target="_blank">DBLP</a>
-                        </div>
-                        <div class="mx-1">/</div>
-                    </div>
-                    <div class="flex">
-                        <div class="text-blue-700">
-                            <a href="https://www.semanticscholar.org/author/Yanyan-Lan/37510256" target="_blank">
-                                Semantic Scholar
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
+            </div>
+            <div class="flex flex-col leading-6 mt-4">
+                <div class="links">
+                    <a href="https://it.ouc.edu.cn/wwx/list.htm">
+                        <img src="./assets/favicon.ico" alt="">
+                        <span>中国海大</span>
+                    </a>
+                </div>
+<!--                <div class="links">-->
+<!--                    <a href="https://it.ouc.edu.cn/wwx/list.htm">-->
+<!--                        <img src="./assets/google%20scholar.png" alt="">-->
+<!--                        <span>谷歌学术</span>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
-        <div class="max-w-5xl text-base mx-auto leading-6 mt-4 people px-4">
+        <div class="main-content max-w-5xl text-base mx-auto leading-6 mt-4 people px-4">
             <div>
                 <p>{About Me}</p>
                 Wenxu Wang is a lecturer in the College of Computer Science and Technology at Ocean University of China.
@@ -92,7 +77,7 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
+        <div class="main-content max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
             <div id="group" class="text-lg font-bold">Group</div>
             <div class="ml-4">
                 <div class="text-base my-2">Current Research Topics:</div>
@@ -109,7 +94,7 @@
                 </ul>
             </div> -->
         </div>
-        <div class="max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
+        <div class="main-content max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
             <div id="publications" class="text-lg font-bold mb-2">
                 <span>Publications</span>
             </div>
@@ -173,7 +158,7 @@
                 </div> -->
             </div>
         </div>
-        <div class="max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
+        <div class="main-content max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
             <div id="projects" class="text-lg font-bold mb-4">Projects</div>
 <!--             <div class="md:flex gap-4 mb-8 md:mb-4">
                 <div class="w-full md:w-64 flex-none">
@@ -234,8 +219,8 @@
             </ul>
         </div>
 
-        <div class="max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
-            <div id="projects" class="text-lg font-bold mb-4">Awards and Honors</div>
+        <div class="main-content max-w-5xl text-base mx-auto leading-6 mt-8 px-4">
+            <div id="Awards" class="text-lg font-bold mb-4">Awards and Honors</div>
             <ul class="list-disc list-inside ml-4">
                 <li> National Scholarship for Doctoral Students, 2024 </li>
                 <li> National Scholarship for Master's Students, 2019 </li>
@@ -246,6 +231,8 @@
         </div>
     </div>
 </div>
-
+<div id="footer">
+    Wenxv Wang@Ocean University of China
+</div>
 </body>
 </html>
